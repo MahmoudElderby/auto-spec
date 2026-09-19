@@ -24,21 +24,43 @@ Not included: `taskstoissues`, bug extension, assess extension (separate Spec Ki
 
 Pipeline details: [pipeline-reference.md](./pipeline-reference.md).
 
-## Quick install (bootstrap everything)
+## Quick install (no git clone)
 
-### Cursor (default)
+**npm / npx** (recommended): downloads the extension from GitHub; you only need Node + [Spec Kit `specify` CLI](#prerequisites-spec-kit-cli).
+
+```bash
+cd your-project
+npx @mahmoudelderby/auto-spec install
+```
+
+Codex:
+
+```bash
+npx @mahmoudelderby/auto-spec install --codex
+```
+
+Global CLI (optional): `npm install -g @mahmoudelderby/auto-spec` then `auto-spec install`.
+
+See [README.npm.md](./README.npm.md) for flags (`--project`, `--no-init`, `--tag`).
+
+### Prerequisites (Spec Kit CLI)
+
+One-time per machine ([uv](https://docs.astral.sh/uv/) required):
+
+```bash
+uv tool install specify-cli --force --from "git+https://github.com/github/spec-kit.git@v0.15.2"
+```
+
+If `npx auto-spec install` finds no `.specify/` folder, it runs `specify init` for you.
+
+### Full bootstrap (PowerShell, includes uv + specify if missing)
 
 ```powershell
 git clone https://github.com/MahmoudElderby/auto-spec.git
-cd your-repo-or-empty-folder
-powershell -ExecutionPolicy Bypass -File C:\path\to\auto-spec\install.ps1 -ProjectRoot . -Integration cursor-agent
+powershell -ExecutionPolicy Bypass -File auto-spec\install.ps1 -ProjectRoot . -Integration cursor-agent
 ```
 
-### Codex CLI
-
-```powershell
-powershell -ExecutionPolicy Bypass -File C:\path\to\auto-spec\install.ps1 -ProjectRoot . -Integration codex
-```
+Use this only when you cannot install `specify` yourself. **Cloning the repo is not required** for normal installs.
 
 The installer will, when needed:
 

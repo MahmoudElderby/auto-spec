@@ -1,0 +1,30 @@
+{
+  "name": "@mahmoudelderby/auto-spec",
+  "version": "1.2.1",
+  "description": "Install Auto Spec (Spec Kit extension + spec portfolio) without cloning the repo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MahmoudElderby/auto-spec.git"
+  },
+  "homepage": "https://github.com/MahmoudElderby/auto-spec#readme",
+  "bin": {
+    "auto-spec": "bin/auto-spec.mjs"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.npm.md"
+  ],
+  "keywords": [
+    "spec-kit",
+    "spec-driven-development",
+    "cursor",
+    "codex",
+    "auto-spec"
+  ]
+}
