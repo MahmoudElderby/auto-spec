@@ -43,4 +43,16 @@ npx @mahmoudelderby/auto-spec install
 2. Commit and tag on GitHub if you want (`git tag v1.2.2` optional — extension zip tag can differ).
 3. `npm publish` again.
 
-If publish fails with **403**: the scope does not match your npm user, or the name is taken by another account.
+If publish fails with **403** or **404** on PUT:
+
+- Run `npm login` again (expired token shows as 401 on `npm whoami` or 404 on publish).
+- The scope **`@mahmoudelderby`** must match your npm username exactly (check at npmjs.com/settings/profile). If your username differs, change `"name"` in `package.json` to `@<your-npm-username>/auto-spec`.
+- Use a token with **publish** access; enable 2FA on the account if npm requires it for publish.
+
+Verify before publish:
+
+```bash
+npm whoami
+npm pack --dry-run
+npm publish
+```

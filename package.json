@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MahmoudElderby/auto-spec.git"
+    "url": "git+https://github.com/MahmoudElderby/auto-spec.git"
   },
   "homepage": "https://github.com/MahmoudElderby/auto-spec#readme",
   "bin": {
