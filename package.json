@@ -26,5 +26,10 @@
     "cursor",
     "codex",
     "auto-spec"
-  ]
+  ],
+  "author": "Mahmoud Elderby",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
