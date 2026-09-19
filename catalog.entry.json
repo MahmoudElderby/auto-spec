@@ -1,0 +1,20 @@
+{
+  "name": "Auto Spec",
+  "id": "auto-spec",
+  "description": "Automated Spec-Driven Development pipeline (full-auto and review modes) with per-phase Cursor model routing.",
+  "author": "MahmoudElderby",
+  "version": "1.1.0",
+  "download_url": "https://github.com/MahmoudElderby/auto-spec/archive/refs/tags/v1.1.0.zip",
+  "repository": "https://github.com/MahmoudElderby/auto-spec",
+  "homepage": "https://github.com/MahmoudElderby/auto-spec",
+  "documentation": "https://github.com/MahmoudElderby/auto-spec/blob/main/docs/INSTALL.md",
+  "license": "MIT",
+  "requires": {
+    "speckit_version": ">=0.15.0"
+  },
+  "provides": {
+    "commands": 3,
+    "hooks": 0
+  },
+  "tags": ["automation", "workflow", "sdd", "cursor", "models"]
+}

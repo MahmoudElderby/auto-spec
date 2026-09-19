@@ -1,0 +1,56 @@
+schema_version: "1.0"
+
+extension:
+  id: "auto-spec"
+  name: "Auto Spec (Spec Kit Autopilot)"
+  version: "1.1.0"
+  description: "Automated SDD pipeline (full/short path, checklist, implement-converge loop) with per-phase model routing for Cursor and Codex."
+  author: "Auto Spec contributors"
+  repository: "https://github.com/MahmoudElderby/auto-spec"
+  license: "MIT"
+  homepage: "https://github.com/MahmoudElderby/auto-spec"
+
+requires:
+  speckit_version: ">=0.15.0"
+  commands:
+    - "speckit.specify"
+    - "speckit.clarify"
+    - "speckit.plan"
+    - "speckit.checklist"
+    - "speckit.tasks"
+    - "speckit.analyze"
+    - "speckit.implement"
+    - "speckit.converge"
+
+provides:
+  commands:
+    - name: "speckit.auto-spec.run"
+      file: "commands/run.md"
+      description: "Full-auto SDD pipeline aligned with Spec Kit 0.15+ (incl. converge loop)."
+      aliases:
+        - "speckit.autopilot.run"
+        - "speckit.autopilot.full"
+    - name: "speckit.auto-spec.review"
+      file: "commands/review.md"
+      description: "Review-mode SDD pipeline with gates and converge loop."
+      aliases:
+        - "speckit.autopilot.review"
+    - name: "speckit.auto-spec.sync-models"
+      file: "commands/sync-models.md"
+      description: "Sync models.yml into phase agent binders (Cursor + Codex paths)."
+      aliases:
+        - "speckit.autopilot.sync-models"
+  config:
+    - name: "models.yml"
+      template: "models.template.yml"
+      description: "Phase models and pipeline options."
+      required: false
+
+tags:
+  - "automation"
+  - "workflow"
+  - "sdd"
+  - "spec-kit"
+  - "cursor"
+  - "codex"
+  - "models"

@@ -1,0 +1,25 @@
+schema_version: "2"
+execution: task
+
+pipeline:
+  mode: full
+  include_checklist: true
+  max_converge_iterations: 5
+  skip_constitution_if_present: true
+  review_checklist_gate: true
+
+phases:
+  constitution: opus-5
+  specify: opus-5
+  clarify: opus-5
+  plan: composer
+  checklist: composer
+  tasks: composer
+  analyze: composer
+  implement: composer
+  converge: composer
+
+aliases:
+  opus-5: claude-opus-5-thinking-high
+  composer: composer-2.5-fast
+  inherit: inherit

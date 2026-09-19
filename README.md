@@ -1,0 +1,107 @@
+# Auto Spec
+
+**Spec Kit extension** that automates Spec-Driven Development for **Cursor** and **Codex**: full/short SDD paths, **checklist**, **implement ↔ converge** loop, and **per-phase model routing**.
+
+Requires [Spec Kit](https://github.com/github/spec-kit) **0.15+** (`specify-cli`). Auto Spec can **install Spec Kit for you** if it is missing.
+
+## What it automates (SDD core)
+
+| Spec Kit skill | Auto Spec |
+|----------------|-----------|
+| `/speckit-constitution` | Once, if constitution still a template |
+| `/speckit-specify` | Yes |
+| `/speckit-clarify` | Yes |
+| `/speckit-plan` | Yes |
+| `/speckit-checklist` | Yes (configurable) |
+| `/speckit-tasks` | Yes |
+| `/speckit-analyze` | Yes (after tasks, before implement) |
+| `/speckit-implement` | Yes |
+| `/speckit-converge` | Yes, in a loop with implement |
+
+Not included: `taskstoissues`, bug extension, assess extension (separate Spec Kit processes).
+
+Pipeline details: [pipeline-reference.md](./pipeline-reference.md).
+
+## Quick install (bootstrap everything)
+
+### Cursor (default)
+
+```powershell
+git clone https://github.com/MahmoudElderby/auto-spec.git
+cd your-repo-or-empty-folder
+powershell -ExecutionPolicy Bypass -File C:\path\to\auto-spec\install.ps1 -ProjectRoot . -Integration cursor-agent
+```
+
+### Codex CLI
+
+```powershell
+powershell -ExecutionPolicy Bypass -File C:\path\to\auto-spec\install.ps1 -ProjectRoot . -Integration codex
+```
+
+The installer will, when needed:
+
+1. Install **uv** (if missing)
+2. Install **specify-cli** from Spec Kit `v0.15.2`
+3. Run **`specify init`** with `cursor-agent` or `codex`
+4. Install **auto-spec** extension
+5. Create **`models.yml`** and sync phase agent binders
+
+### Linux / macOS
+
+```bash
+export AUTO_SPEC_INTEGRATION=cursor-agent   # or codex
+bash /path/to/auto-spec/install.sh /path/to/your-project
+```
+
+## Commands
+
+| Cursor | Codex | Purpose |
+|--------|-------|---------|
+| `/speckit-auto-spec-run` | `$speckit-auto-spec-run` | Full-auto pipeline |
+| `/speckit-auto-spec-review` | `$speckit-auto-spec-review` | Review gates |
+| `/speckit-auto-spec-sync-models` | `$speckit-auto-spec-sync-models` | Apply `models.yml` |
+
+Legacy aliases: `speckit-autopilot-*`.
+
+## Configure pipeline + models
+
+Edit `.specify/extensions/auto-spec/models.yml`:
+
+```yaml
+pipeline:
+  mode: full          # or short
+  include_checklist: true
+  max_converge_iterations: 5
+
+phases:
+  specify: opus-5
+  clarify: opus-5
+  plan: composer
+  tasks: composer
+  analyze: composer
+  implement: composer
+  converge: composer
+```
+
+Then sync models (Cursor or Codex).
+
+## Manual install (Spec Kit already initialized)
+
+```powershell
+specify extension add --dev C:\path\to\auto-spec --force
+powershell -NoProfile -File .\.specify\extensions\auto-spec\scripts\Sync-ModelRouting.ps1
+```
+
+From GitHub release:
+
+```powershell
+specify extension add auto-spec --from https://github.com/MahmoudElderby/auto-spec/archive/refs/tags/v1.1.0.zip --force
+```
+
+## Docs
+
+- [docs/INSTALL.md](./docs/INSTALL.md)
+
+## License
+
+MIT
