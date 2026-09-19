@@ -138,6 +138,11 @@ if (-not (Test-Path (Join-Path $ProjectRoot ".specify"))) {
 
 Write-Host "Installing Auto Spec extension..."
 Install-AutoSpecExtension -Root $ProjectRoot -ExtPath $ExtensionPath -Url $FromUrl
+$extDir = Join-Path $ProjectRoot ".specify\extensions\auto-spec"
+$bundledSkills = Join-Path $extDir "scripts\Install-BundledSkills.ps1"
+if (Test-Path $bundledSkills) {
+    & $bundledSkills -ProjectRoot $ProjectRoot -Integration $Integration -ExtensionPath $extDir
+}
 Ensure-ModelsConfig -Root $ProjectRoot -ExtPath $ExtensionPath
 
 if (-not $SkipModelSync) {
@@ -155,10 +160,12 @@ Write-Host ""
 Write-Host "Auto Spec installed (Spec Kit + extension)."
 Write-Host "Integration: $Integration"
 if ($Integration -eq "codex") {
+    Write-Host "  `$speckit-auto-spec-portfolio  (multi-spec register first)"
     Write-Host "  `$speckit-auto-spec-run"
     Write-Host "  `$speckit-auto-spec-review"
     Write-Host "  `$speckit-auto-spec-sync-models"
 } else {
+    Write-Host "  /speckit-auto-spec-portfolio  (multi-spec register first)"
     Write-Host "  /speckit-auto-spec-run"
     Write-Host "  /speckit-auto-spec-review"
     Write-Host "  /speckit-auto-spec-sync-models"

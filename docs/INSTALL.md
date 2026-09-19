@@ -35,6 +35,8 @@ Parameters:
 |-----------|--------|-------|
 | Spec Kit skills | `.cursor/skills/speckit-*` | `.agents/skills/speckit-*` |
 | Auto Spec skills | `.cursor/skills/speckit-auto-spec-*` | `.agents/skills/speckit-auto-spec-*` |
+| Bundled **spec-portfolio** skill | `.cursor/skills/spec-portfolio/` | `.agents/skills/spec-portfolio/` |
+| Spec portfolio output | `.specify/product/spec-portfolio.md` | same |
 | Phase agent binders (sync) | `.cursor/agents/speckit-*` | `.agents/agents/speckit-*` |
 | Extension files | `.specify/extensions/auto-spec/` | same |
 
@@ -43,6 +45,7 @@ Parameters:
 ```powershell
 cd your-project
 specify extension add --dev C:\work\ai\auto-spec --force
+powershell -NoProfile -File .\.specify\extensions\auto-spec\scripts\Install-BundledSkills.ps1
 powershell -NoProfile -File .\.specify\extensions\auto-spec\scripts\Sync-ModelRouting.ps1
 ```
 
@@ -67,5 +70,5 @@ specify integration status
 
 In agent chat:
 
-- Cursor: `/speckit-auto-spec-run Build a hello-world CLI`
-- Codex: `$speckit-auto-spec-run Build a hello-world CLI`
+- Cursor: `/speckit-auto-spec-portfolio` then `/speckit-auto-spec-run …`
+- Codex: `$speckit-auto-spec-portfolio` then `$speckit-auto-spec-run …`

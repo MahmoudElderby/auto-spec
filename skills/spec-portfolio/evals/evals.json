@@ -1,0 +1,23 @@
+{
+  "skill_name": "spec-portfolio",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We already have checkout revamp docs under .review/checkout-experience/ and a big architecture.md. Break the product into Spec Kit specs and write the portfolio we can review before any /speckit-specify. Product key CHK, R0 is customer cart + checkout only.",
+      "expected_output": "Creates .specify/product/spec-portfolio.md with CHK-SPC-* rows, dependencies, open questions, status draft; does not create specs/ folders.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Import .review/cart/user-stories.md into an SDD spec portfolio for Spec Kit. Merge anything that's one releasable slice. Mark what's ready for specify.",
+      "expected_output": "spec-portfolio.md with source refs to cart user stories, sensible slugs, Ready for specify? column justified.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I approved the portfolio—update Gate 3 and give me the first /speckit-specify prompt for the highest priority R0 row.",
+      "expected_output": "Portfolio status Approved for SDD, rows approved, Handoff section with 2-4 sentence specify prompt; still no specs/001 folder unless user asked to run specify.",
+      "files": []
+    }
+  ]
+}

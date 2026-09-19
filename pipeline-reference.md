@@ -2,6 +2,14 @@
 
 Use this order unless `pipeline.mode: short` in `models.yml`.
 
+## Product portfolio (multi-spec, before SDD)
+
+For products with many features, run **portfolio** first:
+
+0. **portfolio** — `/speckit-auto-spec-portfolio` (Cursor) or `$speckit-auto-spec-portfolio` (Codex). Produces **`.specify/product/spec-portfolio.md`**. Iterate until **Approved for SDD**, then run specify (or auto-spec run) per approved row.
+
+Bundled skill: `.specify/extensions/auto-spec/skills/spec-portfolio/`.
+
 ## Full path (production)
 
 1. **constitution** — only if `.specify/memory/constitution.md` is still a template OR user passed constitution text in `$ARGUMENTS`

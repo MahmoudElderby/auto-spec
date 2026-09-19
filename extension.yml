@@ -3,8 +3,8 @@ schema_version: "1.0"
 extension:
   id: "auto-spec"
   name: "Auto Spec (Spec Kit Autopilot)"
-  version: "1.1.0"
-  description: "Automated SDD pipeline (full/short path, checklist, implement-converge loop) with per-phase model routing for Cursor and Codex."
+  version: "1.2.0"
+  description: "Automated SDD pipeline plus spec portfolio decomposition (multi-spec products) with per-phase model routing for Cursor and Codex."
   author: "Auto Spec contributors"
   repository: "https://github.com/MahmoudElderby/auto-spec"
   license: "MIT"
@@ -40,6 +40,11 @@ provides:
       description: "Sync models.yml into phase agent binders (Cursor + Codex paths)."
       aliases:
         - "speckit.autopilot.sync-models"
+    - name: "speckit.auto-spec.portfolio"
+      file: "commands/portfolio.md"
+      description: "Decompose product docs into .specify/product/spec-portfolio.md before per-feature specify."
+      aliases:
+        - "speckit.autopilot.portfolio"
   config:
     - name: "models.yml"
       template: "models.template.yml"

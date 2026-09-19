@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0] - 2026-09-19
+
+### Added
+
+- **Spec portfolio** for multi-spec products: bundled `skills/spec-portfolio/` (writes `.specify/product/spec-portfolio.md`).
+- Command **`speckit.auto-spec.portfolio`** → `/speckit-auto-spec-portfolio` (Cursor) / `$speckit-auto-spec-portfolio` (Codex).
+- `scripts/Install-BundledSkills.ps1` — copies bundled skills into `.cursor/skills` or `.agents/skills` and creates `.specify/product/`.
+
 ## [1.1.0] - 2026-09-19
 
 ### Changed

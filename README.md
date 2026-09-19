@@ -20,6 +20,8 @@ Requires [Spec Kit](https://github.com/github/spec-kit) **0.15+** (`specify-cli`
 
 Not included: `taskstoissues`, bug extension, assess extension (separate Spec Kit processes).
 
+**Multi-spec products:** run **`/speckit-auto-spec-portfolio`** first to produce `.specify/product/spec-portfolio.md`, iterate until approved, then run specify or auto-spec per row.
+
 Pipeline details: [pipeline-reference.md](./pipeline-reference.md).
 
 ## Quick install (bootstrap everything)
@@ -57,6 +59,7 @@ bash /path/to/auto-spec/install.sh /path/to/your-project
 
 | Cursor | Codex | Purpose |
 |--------|-------|---------|
+| `/speckit-auto-spec-portfolio` | `$speckit-auto-spec-portfolio` | **Multi-spec:** build `.specify/product/spec-portfolio.md` before specify |
 | `/speckit-auto-spec-run` | `$speckit-auto-spec-run` | Full-auto pipeline |
 | `/speckit-auto-spec-review` | `$speckit-auto-spec-review` | Review gates |
 | `/speckit-auto-spec-sync-models` | `$speckit-auto-spec-sync-models` | Apply `models.yml` |
@@ -95,7 +98,8 @@ powershell -NoProfile -File .\.specify\extensions\auto-spec\scripts\Sync-ModelRo
 From GitHub release:
 
 ```powershell
-specify extension add auto-spec --from https://github.com/MahmoudElderby/auto-spec/archive/refs/tags/v1.1.0.zip --force
+specify extension add auto-spec --from https://github.com/MahmoudElderby/auto-spec/archive/refs/tags/v1.2.0.zip --force
+powershell -NoProfile -File .\.specify\extensions\auto-spec\scripts\Install-BundledSkills.ps1
 ```
 
 ## Docs

@@ -53,6 +53,9 @@ else
 fi
 
 EXT_DIR="$PROJECT_ROOT/.specify/extensions/auto-spec"
+if command -v pwsh >/dev/null 2>&1 && [[ -f "$EXT_DIR/scripts/Install-BundledSkills.ps1" ]]; then
+  pwsh -NoProfile -File "$EXT_DIR/scripts/Install-BundledSkills.ps1" -ProjectRoot "$PROJECT_ROOT" -Integration "$INTEGRATION" -ExtensionPath "$EXT_DIR"
+fi
 if [[ ! -f "$EXT_DIR/models.yml" && -f "$EXT_PATH/models.template.yml" ]]; then
   cp "$EXT_PATH/models.template.yml" "$EXT_DIR/models.yml"
 fi
@@ -69,7 +72,9 @@ fi
 
 echo "Done. Integration=$INTEGRATION"
 if [[ "$INTEGRATION" == "codex" ]]; then
+  echo "  \$speckit-auto-spec-portfolio"
   echo "  \$speckit-auto-spec-run"
 else
+  echo "  /speckit-auto-spec-portfolio"
   echo "  /speckit-auto-spec-run"
 fi
