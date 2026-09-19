@@ -1,6 +1,6 @@
 {
-  "name": "@mahmoudelderby/auto-spec",
-  "version": "1.2.1",
+  "name": "speckit-auto-spec",
+  "version": "1.2.2",
   "description": "Install Auto Spec (Spec Kit extension + spec portfolio) without cloning the repo",
   "license": "MIT",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "homepage": "https://github.com/MahmoudElderby/auto-spec#readme",
   "bin": {
-    "auto-spec": "bin/auto-spec.mjs"
+    "speckit-auto-spec": "bin/speckit-auto-spec.mjs"
   },
   "type": "module",
   "engines": {
@@ -27,9 +27,5 @@
     "codex",
     "auto-spec"
   ],
-  "author": "Mahmoud Elderby",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  }
+  "author": "Mahmoud Elderby"
 }

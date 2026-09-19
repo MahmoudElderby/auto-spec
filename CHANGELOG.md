@@ -1,10 +1,16 @@
 # Changelog
 
+## [1.2.2] - 2026-09-19
+
+### Changed
+
+- npm package renamed to unscoped **`speckit-auto-spec`**: `npx speckit-auto-spec install` (the name `auto-spec` is taken on npm).
+
 ## [1.2.1] - 2026-09-19
 
 ### Added
 
-- **npm installer**: `npx @mahmoudelderby/auto-spec install` — no git clone; uses `specify extension add --from` release zip + Node copy of bundled skills.
+- **npm installer**: `npx speckit-auto-spec install` — no git clone; uses `specify extension add --from` release zip + Node copy of bundled skills.
 
 ## [1.2.0] - 2026-09-19
 

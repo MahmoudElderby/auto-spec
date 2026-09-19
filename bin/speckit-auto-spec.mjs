@@ -3,10 +3,10 @@ import { installAutoSpec } from "../lib/install.mjs";
 
 function printHelp() {
   console.log(`
-auto-spec — install Auto Spec (Spec Kit extension) without git clone
+speckit-auto-spec — install Auto Spec (Spec Kit extension) without git clone
 
 Usage:
-  npx @mahmoudelderby/auto-spec install [options]
+  npx speckit-auto-spec install [options]
 
 Options:
   --project <dir>       Target project (default: current directory)
@@ -18,9 +18,9 @@ Options:
 Prerequisite: Spec Kit CLI on PATH (specify). See README if missing.
 
 Examples:
-  npx @mahmoudelderby/auto-spec install
-  npx @mahmoudelderby/auto-spec install --integration codex
-  npx @mahmoudelderby/auto-spec install --project ./my-app
+  npx speckit-auto-spec install
+  npx speckit-auto-spec install --integration codex
+  npx speckit-auto-spec install --project ./my-app
 `);
 }
 

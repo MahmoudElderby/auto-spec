@@ -5,26 +5,26 @@ Thin installer for the [Auto Spec](https://github.com/MahmoudElderby/auto-spec) 
 ## One command
 
 ```bash
-npx @mahmoudelderby/auto-spec install
+npx speckit-auto-spec install
 ```
 
 Codex:
 
 ```bash
-npx @mahmoudelderby/auto-spec install --codex
+npx speckit-auto-spec install --codex
 ```
 
 Another directory:
 
 ```bash
-npx @mahmoudelderby/auto-spec install --project ./my-repo
+npx speckit-auto-spec install --project ./my-repo
 ```
 
 Global (optional):
 
 ```bash
-npm install -g @mahmoudelderby/auto-spec
-auto-spec install
+npm install -g speckit-auto-spec
+speckit-auto-spec install
 ```
 
 ## Prerequisites

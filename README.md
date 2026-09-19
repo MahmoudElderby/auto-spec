@@ -30,16 +30,16 @@ Pipeline details: [pipeline-reference.md](./pipeline-reference.md).
 
 ```bash
 cd your-project
-npx @mahmoudelderby/auto-spec install
+npx speckit-auto-spec install
 ```
 
 Codex:
 
 ```bash
-npx @mahmoudelderby/auto-spec install --codex
+npx speckit-auto-spec install --codex
 ```
 
-Global CLI (optional): `npm install -g @mahmoudelderby/auto-spec` then `auto-spec install`.
+Global CLI (optional): `npm install -g speckit-auto-spec` then `speckit-auto-spec install`.
 
 See [README.npm.md](./README.npm.md) for flags (`--project`, `--no-init`, `--tag`).
 
